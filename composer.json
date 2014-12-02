@@ -1,0 +1,19 @@
+{
+    "name": "minirouter/minirouter",
+    "require": {
+        "symfony/yaml": "~3.0@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "EriCatillon",
+            "email": "ericatillon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "":"src/"
+        }
+    }
+}
