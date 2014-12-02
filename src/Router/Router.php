@@ -7,6 +7,8 @@ namespace Router;
 class Router implements \Countable
 {
 	private $routes =[];
+	private $params =[];
+	private $matches =[];
 
 	function __construct()
 	{
@@ -22,9 +24,10 @@ class Router implements \Countable
 		}
 		
 	}
-	public function getRoute($urL){
+	public function getRoute($url){
 		$routing=[];
-		foreach ($this->route as $route) {
+		foreach ($this->routes as $route) {
+
 			if(preg_match('/^'.$route['pattern'].'$/', $url, $matches)){
 
 				list($controller, $action) = explode(':',$route['connect']);
@@ -34,8 +37,11 @@ class Router implements \Countable
 					'action' => $action,
 					'params' => $this->getParams($route, $matches)
 				];
+				return $routing;
 			}	
-		}	
+		}
+		throw new \RuntimeException("bad route");
+				
 
 	}
 	public function count(){
@@ -57,6 +63,6 @@ class Router implements \Countable
 			$p=trim($p);
 			$value[$p] = $matches[$p];
 		}
-		return $values;
+		return $value;
 	}
 }

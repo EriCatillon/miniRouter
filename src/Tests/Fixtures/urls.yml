@@ -12,7 +12,7 @@ blogController_store:
 blogController_edit:
   url: /edit/1
   
-CategoryController_show:
-  url1: /cat/php/2
-  url2: /cat/mysql/2
-  url3: /cat/vagrant/2
+BlogController_show:
+  url1: /php/1
+  url2: /php/2
+  url3: /php/3

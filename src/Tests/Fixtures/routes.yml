@@ -1,5 +1,5 @@
 BlogController_index:
-  pattern: /\/
+  pattern: \/
   connect: Controllers\BlogController:index
 
 BlogController_show:
